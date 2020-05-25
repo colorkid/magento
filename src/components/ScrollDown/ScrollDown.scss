@@ -1,0 +1,48 @@
+.scroll-down {
+  $this: &;
+
+  position: relative;
+  bottom: 80px;
+
+  @media (max-width: $laptop){
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: $scrollDownIconWidth;
+    height: $scrollDownIconWidth;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("images/arrowsWhite.png");
+  }
+
+  &__text {
+    font-size: $secondaryFontSize;
+    color: $primaryWhite;
+    text-transform: uppercase;
+  }
+
+  &--secondary {
+    bottom: 0;
+
+    @media (max-width: $laptop){
+      display: block;
+    }
+
+    @media (max-width: $maxMobile){
+      display: none;
+    }
+
+    &:after {
+      top: 50px;
+    }
+
+    #{$this}__text {
+      color: $secondaryColor;
+    }
+  }
+}

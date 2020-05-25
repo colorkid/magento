@@ -1,0 +1,27 @@
+extends ../layouts/base.pug
+include ../components/Nav/Nav
+include ../components/ContentSection/ContentSection
+include ../components/Nav/Nav
+
+block variables
+    -
+        var navLinks = [
+            {link: "#home", text: "home"},
+            {link: "#aboutme", text: "about me"},
+            {link: "#portfolio", text: "portfolio"},
+            {link: "#contact", text: "contact"},
+        ];
+    -
+        var ContentSectionText = {
+            title: "About Me",
+            textFirst: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore" +
+            "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            textSecond: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            ps: "Jason Wood"
+        }
+block header
+    +Nav(navLinks, "navigation navigation--top")
+block main
+    include ../components/TopSection/TopSection
+    +Nav(navLinks, "navigation navigation--secondary")
+    +ContentSection(ContentSectionText)

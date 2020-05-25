@@ -1,0 +1,13 @@
+include ../ScrollDown/ScrollDown
+
+mixin ContentSection(text)
+    section.section.content-section
+        .content-section__top
+            .content-section__pic
+            .content-section__text
+                h1.content-section__title=text.title
+                p.content-section__p=text.textFirst
+                p.content-section__p=text.textSecond
+                h2.content-section__ps=text.ps
+        .content-section__bottom
+            +ScrollDown("keep scrolling, there is still more to come.", "scroll-down scroll-down--secondary")

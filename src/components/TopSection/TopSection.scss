@@ -1,0 +1,21 @@
+.top-section {
+  height: 100vh;
+  background-image: url("images/middle.png");
+  background-color: $topBackgroundFallback;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: $maxMobile){
+    height: 265px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    max-width: $desktopWidth;
+  }
+}

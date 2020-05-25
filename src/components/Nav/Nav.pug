@@ -1,0 +1,9 @@
+mixin Nav(links, className)
+    if className === "navigation navigation--top"
+        input(type="checkbox" id="toggleMobileMenu" class="mobile-menu-checkbox")
+        label(for="toggleMobileMenu" class="mobile-menu-label") ∞ Menu
+    nav(class=className)
+        ul.navigation__ul
+            each val in links
+                li.navigation__li
+                    a(class="navigation__a" href=val.link)=val.text
